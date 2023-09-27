@@ -6,7 +6,7 @@ import { LOGIN_REQUEST, SIGNUP_REQUEST } from './actionType';
 import { Action } from 'redux';
 import { LoginSuccessPayload } from './types';
 
-function* onLogin({ type: {} }: Action<LoginSuccessPayload>) {
+function* onLogin({ type }: Action<string>) {
     try {
         const response = 'this is token after calling API';
 
@@ -28,17 +28,17 @@ function* onLogin({ type: {} }: Action<LoginSuccessPayload>) {
     }
 }
 
-function* onSignup({ payload }) {
+function* onSignup({ type }: Action<string>) {
     try {
         const response = {};
-        payload?.callback(response, null);
+        // payload?.callback(response, null);
     } catch (error) {
-        payload?.callback(null, error);
+        // payload?.callback(null, error);
     }
 }
 
 function* watchLoginSaga() {
-    yield takeEvery(LOGIN_REQUEST, (action: Action<LoginSuccessPayload>) => {});
+    yield takeEvery(LOGIN_REQUEST, onLogin);
 }
 
 function* watchSignupSaga() {
