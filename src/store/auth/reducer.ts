@@ -1,4 +1,4 @@
-import { AuthAction, AuthState } from "./types";
+import { AuthAction, AuthState } from './types';
 
 import {
     LOGIN_REQUEST,
@@ -7,12 +7,12 @@ import {
     SIGNUP_REQUEST,
     SIGNUP_REQUEST_SUCCESS,
     SIGNUP_REQUEST_FAILURE,
-} from "./actionType";
+} from './actionType';
 
 const initialState: AuthState = {
     pending: false,
-    token: "",
-    error: "",
+    token: '',
+    error: '',
 };
 
 const reducer = (state = initialState, action: AuthAction) => {
@@ -37,7 +37,7 @@ const reducer = (state = initialState, action: AuthAction) => {
             return { ...state, pending: true };
 
         case SIGNUP_REQUEST_SUCCESS:
-            return { ...state, pending: false, error: "" };
+            return { ...state, pending: false, error: '' };
 
         case SIGNUP_REQUEST_FAILURE:
             return { ...state, pending: false, error: action.payload.error };

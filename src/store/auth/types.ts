@@ -5,11 +5,11 @@ import {
     SIGNUP_REQUEST,
     SIGNUP_REQUEST_SUCCESS,
     SIGNUP_REQUEST_FAILURE,
-} from "./actionType";
+} from './actionType';
 
 export type AuthState = {
     pending: boolean;
-    token: "";
+    token: '';
     error?: string;
 };
 
@@ -80,10 +80,4 @@ export type SignupFailure = {
     payload: SignupFailurePayload;
 };
 
-export type AuthAction =
-    | Login
-    | LoginSuccess
-    | LoginFailure
-    | Signup
-    | SignupSuccess
-    | SignupFailure;
+export type AuthAction = Login | LoginSuccess | LoginFailure | Signup | SignupSuccess | SignupFailure;
