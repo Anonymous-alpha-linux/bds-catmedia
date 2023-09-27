@@ -1,15 +1,21 @@
 import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { Outlet, createBrowserRouter } from 'react-router-dom';
+import Navbar from '../layouts/navbar/navbar';
 
 export const publicRoutes = [
     {
         path: '/',
         element: (
-            <React.Fragment>
-                <h2>Title</h2>
-            </React.Fragment>
+            <>
+                <Navbar />
+                <Outlet />
+            </>
         ),
+        children: [
+            {
+                path: '',
+                element: <div>kjha</div>,
+            },
+        ],
     },
 ];
-
-export const publicRouter = createBrowserRouter(publicRoutes);

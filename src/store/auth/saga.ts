@@ -42,7 +42,7 @@ function* watchLoginSaga() {
 }
 
 function* watchSignupSaga() {
-    yield takeEvery(SIGNUP_REQUEST, onSignup);
+    // yield takeEvery(SIGNUP_REQUEST, onSignup);
 }
 
 export default function* authSaga() {
